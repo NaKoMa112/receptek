@@ -1,6 +1,8 @@
-tr{
-    border-bottom: 1px solid black;
-}
+
 body{
     justify-content: center;
+
+    background-image: url("kepek/Építészeti\ Tervek1.jpg");
+    background-size: contain;
+    background-repeat: repeat;
 }

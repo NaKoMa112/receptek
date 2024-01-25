@@ -27,7 +27,8 @@
         }
 
         function show(id){
-                window.location.href = 'index.php?prog=reszletek.php?id=' +encodeURIComponent(id);
+            console.log(id);
+                window.location.href = 'index.php?prog=reszletek.php&id=' +encodeURIComponent(id);
             }
 
     </script>

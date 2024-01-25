@@ -1,5 +1,4 @@
-<div class="row">
-
+<div class="row">  
 </div>
 <script>
         let urlParams = new URLSearchParams(window.location.search);
@@ -11,16 +10,27 @@
 
         function renderDetails(data){
         console.log(data);
-        /*document.querySelector('.row').innerHTML = '';
+        document.querySelector('.row').innerHTML =`
+            <div class="col-md-12 text-center">
+            <img class="${data[0].kep} img-fluid" src="kepek/${data[0].kep}">
+            <h1 class="${data[0].tnev} text-center">${data[0].tnev}</h1>
+            <ul class="font-weight-bold text-left">Hozzávalók:</ul>
+            </div>
+                `
         for(let obj of data){
             document.querySelector('.row').innerHTML += `
-            <div class="col-md-12 m-2 text-center">
-                    <h1 class="${obj.nev}">${obj.nev}</h1>
-                    <img class="${obj.kep} img-fluid" src="kepek/${obj.kep}">
-
-                    <div class="leirás">${obj.leiras}</div>
-                </div>  
+                <div class="col-md-12 m-1 text-left">
+                    <li>${obj.hnev}</li>
+                </div> 
+                
             `
-        }*/
+        }
+        document.querySelector('.row').innerHTML +=`
+        <div class="leirás">${data[0].leiras}</div>
+        <button onclick="vissza()">vissza</button>`
+    }
+
+    function vissza(){
+        window.location.href = 'index.php?prog=betolt.php';
     }
 </script>

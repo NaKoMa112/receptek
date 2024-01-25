@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="getData.js"></script>
     <title>Sport Sütemények</title>
+      <!--PowerBites.com-->
 </head>
-<body>
     <body>
         <div class="container bg-light p-0">
       
@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item p-2 m-2">
-                  <a class="nav-link" href="index.php">Főoldal</a>
+                  <a class="nav-link" href="index.php?prog=fooldal.php">Főoldal</a>
                 </li>
                 <li class="nav-item p-2 m-2">
                   <a class="nav-link" href="index.php?prog=betolt.php">Szütemények</a>
@@ -29,7 +29,7 @@
                   <a class="nav-link" href="index.php?prog=sajatrecept.php">Saját recept</a>
                 </li>
                 <li class="nav-item p-2 m-2">
-                  <a class="nav-link" href="index.php?prog=kedvencrecept.php">Kedvenc receptek</a>
+                  <a class="nav-link" href="index.php?prog=profil.php">Profil</a>
                 </li>
               </ul>
             </div>

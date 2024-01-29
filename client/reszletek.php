@@ -26,8 +26,8 @@
             `
         }
         document.querySelector('.row').innerHTML +=`
-        <div class="leirás">${data[0].leiras}</div>
-        <button onclick="vissza()">vissza</button>`
+        <div class="leiras">${data[0].leiras}</div>
+        <button type="button" class="vissza-btn" onclick="vissza()">vissza</button>`
     }
 
     function vissza(){

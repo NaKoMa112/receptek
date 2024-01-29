@@ -1,13 +1,3 @@
-<style>
-    .input{
-        border-bottom: 1px solid;
-        border-start-end-radius: auto;
-    }
-    .nev{
-        width: 300px;
-    }
-</style>
-
 <div class="row">
     
     <div class="col-md-12 text-center m-1">
@@ -15,7 +5,7 @@
     </div>
     <div class="input col-md-12 m-1">
         <p>sütemény neve:</p>
-        <input type="text" class="nev" maxlength="100" placeholder="pl.:proteineskókusz golyó">
+        <input type="text" class="sutinev" maxlength="100" placeholder="pl.:proteineskókusz golyó">
     </div>
     <div class="input col-md-12 m-1">
         <p>sütemény képe:</p>
@@ -25,43 +15,55 @@
         <p>sütemény leírása:</p>
         <textarea name="lerias" id="" cols="40" rows="10" maxlength="1000" placeholder="leírás"></textarea>
     </div>
-    <div class="hozzavalokDiv m-1 col-md-12">
-        <div class="hozza col-md-12">
+    <div class="hozzavalokDiv1 row col-md-12 m-1">
+            <div class="hozza-elso col-md-4">
                 <label class="hozzavalo">Hozzávaló:</label>
                 <input type="text" class="hozzavalo" name="ingredient_name[]" placeholder="pl.:kókuszreszelék" required>
-                
+            </div>
+            <div class="hozza-elso col-md-4">     
                 <label class="hozzavalo-lbl">Mennyiség:</label>
                 <input type="number" class="hozzavalo" name="ingredient_quantity[]" min="1" placeholder="1" required>
-
+            </div>
+            <div class="hozza-elso col-md-4 mb-2">
                 <label class="hozzavalo-lbl">Mértékegység:</label>
                 <input type="text" class="hozzavalo" name="ingredient_quantity[]" min="1" placeholder="csomag" required>
-        </div>
+            </div>
     </div>
-    <button type="button" class="button" onclick="plusz()">Hozzávaló hozzáadás</button>
+    <div class="hozzavalokDiv2 row col-md-12 m-1">
+
+    </div>
+    <div class="col-md-12">
+        <button type="button" class="hozza-btn" onclick="plusz()">Hozzávaló hozzáadás</button>
+    </div>
+    <div class="input col-md-12 m-1 text-center">
+        <button type="button" class="mentes-btn" onclick="mentes()">Mentés</button>
+    </div>
+    
 </div>
 <script>
     function plusz() {
-        var newIngredient = document.createElement("div");
-        newIngredient.className = "hozza col-md-12";
-        newIngredient.innerHTML = `
-            <label class="hozzavalo-lbl">Hozzávaló:</label>
-            <input type="text" class="hozzavalo" name="hozzavalo_nev[]" required>
-
-            <label class="hozzavalo-lbl">Mennyiség:</label>
-            <input type="number" class="hozzavalo" name="hozzavalo_mennyiseg[]" min="1" required>
-
-            <label class="hozzavalo-lbl">Mértékegység:</label>
-            <input type="text" class="hozzavalo" name="hozzavalo_nev[]" required>
-
-            <button type="button" class="remove-btn" onclick="torol(this)">❌</button>
+        var i = 0;
+        document.querySelector('.hozzavalokDiv2').innerHTML += `
+        <div class="hozza col-md-4">
+                <label class="hozzavalo">Hozzávaló:</label>
+                <input type="text" class="hozzavalo" name="ingredient_name[]" placeholder="pl.:kókuszreszelék" required>
+            </div>
+            <div class="hozza col-md-4">     
+                <label class="hozzavalo-lbl">Mennyiség:</label>
+                <input type="number" class="hozzavalo" name="ingredient_quantity[]" min="1" placeholder="1" required>
+            </div>
+            <div class="hozza col-md-4">
+                <label class="hozzavalo-lbl">Mértékegység:</label>
+                <input type="text" class="hozzavalo" name="ingredient_quantity[]" min="1" placeholder="csomag" required>
+                <button type="button" class="torol-btn" onclick="torol(this)">❌</button>
+            </div>
+            
         `;
-
-        document.querySelector(".hozzavalokDiv").appendChild(newIngredient);
+        i++;
     }
 
     function torol(element){
-        var parentElement = element.parentNode;
-        parentElement.parentNode.removeChild(parentElement);
+        document.querySelector('.hozzavalokDiv2').innerHTML =``;
     }
 
 </script>

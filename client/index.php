@@ -29,7 +29,7 @@
                   <a class="nav-link" href="index.php?prog=sajatrecept.php">Saját recept</a>
                 </li>
                 <li class="nav-item p-2 m-2">
-                  <a class="nav-link" href="index.php?prog=profil.php">Profil</a>
+                  <a class="nav-link" href="index.php?prog=bejelentkezes.php">Profil</a>
                 </li>
               </ul>
             </div>

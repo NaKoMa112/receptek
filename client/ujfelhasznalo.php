@@ -18,5 +18,12 @@
     <div class="input col-md-12 m-1">
         <button class="mentes-btn" onclick="mentes()">Mentés</button>
     </div>
-
+    <div class="input col-md-12 m-1">
+        <button class="vissza-btn" onclick="vissza()">vissza</button>
+    </div>
 </div>
+<script>
+    function vissza(){
+        window.location.href = 'index.php?prog=bejelentkezes.php';
+    }
+</script>

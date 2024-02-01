@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="getData.js"></script>
+    <script src="postData.js"></script>
     <title>Sport Sütemények</title>
       <!--PowerBites.com-->
 </head>

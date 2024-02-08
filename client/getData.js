@@ -4,3 +4,8 @@ async function getData(url,renderFc){
     renderFc(data)
 
 }
+async function sendFile(url,config,renderFC){
+    const response=await fetch(url,config)
+    const data=await response.json()
+    renderFC(data)
+}

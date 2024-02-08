@@ -10,7 +10,8 @@
         </div>
         <div class="input col-md-12 m-1">
             <p>sütemény képe:</p>
-            <input type="file" name="kep" id="">
+            <input type="file" name="kep" id="kep" onchange="uploadImg(this)">
+            <div class="uploaded-img"></div>
         </div>
         <div class="input col-md-12 m-1">
             <p>sütemény leírása:</p>
@@ -44,6 +45,35 @@
     </div>
 </form>
 <script>
+    function uploadImg(obj){
+            console.log(obj.files[0])
+            let myFile=obj.files[0]
+            if(!['image/jpeg','image/png'].includes(myFile.type)){
+                document.querySelector('.uploaded-img').innerHTML="Csak jpeg és png feltöltés engedélyezett!"
+                obj.files[0].value=''
+                return
+            }
+            //2MB az engedélyezett:
+            if(myFile.size>2*1024*1024){
+                document.querySelector('.uploaded-img').innerHTML="Maximum 2MB engedélyezett!"
+                obj.files[0].value=''
+                return
+            }
+            const formData=new FormData();
+            formData.append('myImage',myFile)
+            const configObj={
+                method:'POST',
+                body: formData
+            }
+            sendFile('../server/feltoltkep.php',configObj,render)
+        }
+        function render(data){
+            console.log(data.img_src)
+            document.querySelector('.uploaded-img').innerHTML=`
+                <div>Sikeres fájlfeltöltés!</div>
+                <img id="kepnezet" src="${data.img_src}" alt="fotó" style="width:100px;" />
+            `
+        }
 
     var i = 0;
 
@@ -76,9 +106,15 @@
     let termekid;
 
     function mentes() {
+        console.log(document.getElementById("kepnezet").src);
+        let slash = document.getElementById("kepnezet").src.lastIndexOf("/");
+        let kepnev = document.getElementById("kepnezet").src.substr(slash +1);
         const formdata = new FormData(document.querySelector('form'));
+        formdata.set("kep", kepnev);
+        for (let obj of formdata) {
+                console.log(obj);
+            }
         postData('../server/feltolt.php', formdata, renderMsg);
-
     }
 
     function renderMsg(data) {
@@ -99,7 +135,7 @@
                 })
             }
             //console.log(hozzavalok);
-            postData('../server/feltolthozzavalok.php', JSON.stringify(hozzavalok), renderresult);
+            //postData('../server/feltolthozzavalok.php', JSON.stringify(hozzavalok), renderresult);
 
         }
         console.log(data);

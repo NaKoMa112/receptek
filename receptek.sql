@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Feb 01. 10:04
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.0.30
+-- Létrehozás ideje: 2024. Feb 08. 11:39
+-- Kiszolgáló verziója: 10.4.28-MariaDB
+-- PHP verzió: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -94,9 +94,7 @@ INSERT INTO `hozzavalok` (`id`, `termek_id`, `nev`, `mennyiseg`, `mertekegyseg`)
 (52, 5, 'fehérjoghurt (kb. 3,7% zsírtartalommal)', 250, 'g'),
 (53, 5, 'xillit', 30, 'g'),
 (54, 5, 'krémekbe használható zselatin fixáló', 1, 'csomag'),
-(55, 5, 'kalóriamentes eperszirup', 0, ''),
-(56, 7, 'liszt', 200, 'gramm'),
-(57, 7, 'só', 10, 'gramm');
+(55, 5, 'kalóriamentes eperszirup', 0, '');
 
 -- --------------------------------------------------------
 
@@ -121,12 +119,7 @@ INSERT INTO `termekek` (`id`, `nev`, `leiras`, `kep`) VALUES
 (3, 'Habos csokoládékrémes muffinok', 'A sütőt előmelegítjük 160 °C-ra. A tojásfehérjékből lassan habot készítünk, melyhez fokozatosan hozzáadjuk a cukrot és a tojássárgáját. A lisztet, fehérjét és a sütőport együtt átszitáljuk. Kanalanként kézzel lassan hozzáadjuk az átszitált keveréket a felvert habhoz. A tésztát szétosztjuk a formákba (a jobb manipuláció miatt ideális a szilikon forma) és megsütjük.\r\nA csokoládét gőz fölött felolvasztjuk és hozzáadjuk a túrót. Ha szeretnéd, hogy a krém még édesebb legyen, adhatsz hozzá pár csepp Flavor Drops-ot. Ha kihűltek a muffinok feldíszítjük őket és hűvös helyen tároljuk.', 'Penove-muffiny-s-cokoladovym-kremom.webp'),
 (4, 'Túrós cheesecake erdei gyümölcsökkel', 'A nagy kerek formát sütőpapírral béleljük ki. A kukoricapelyhet, vagy a zabpelyhet ledaráljuk és összekeverjük a felolvasztott kókuszolajjal és az agávé sziruppal. Lenyomkodjuk a forma aljára és 160 °C-on 2 percig sütjük.\r\nA fehérjékből habot készítünk. A sárgájához fokozatosan hozzáadjuk a xillitet, túrót, az átszitált lisztet a fehérjével együtt, valamint az összes további hozzávalót is. Végül kézzel lágyan hozzáadjuk a fehérjékből készült habot. A keveréket a formába öntjük, majd 160 °C-on körülbelül 40 percig sütjük, amíg a cheesecake nem lesz készen (de ne legyen száraz!). Végül pihentetni hagyjuk a kikapcsolt sütőben, melynek ajtaját enyhén kinyitjuk.\r\nA keményítőt, vagy a vaníliás pudingot egy kevés vízben elkeverjük (kb. 1,5 – 2,5 dl), hozzáadjuk a gyümölcsöt és az édesítőt, majd állandó keverés mellett ugyanúgy készítjük el, mint a pudingot. Ha a krém sűrű, hagyjuk egy kicsit kihűlni. Hozzáadjuk a joghurtot és rákenjük a süteményre. Kész!', 'cheesecake1.webp'),
 (5, 'Sajttorta a robotgépből', 'Előkészítjük a formát, melynek alját sütőpapírral bélelünk ki. Először leőröljük a lenmagokat, majd hozzáadjuk a víz egy részét és a mazsolát, majd összekeverjük, míg nem lesz megfelelő a textúrája (a tészta ragadós alapja). Hozzáadjuk a psylliumot és a keveréket kézzel összedolgozzuk. Ha szükséges, adunk még hozzá vizet. Hozzáadjuk az instant pelyhet és átkeverjük – egy sűrű, de még mindig kenhető állagú masszát kellene kapnunk. Szükség szerint hozzáadjuk a maradék vizet. Ha a tészta textúrája a megfelelő sűrűségű, elkezdjük elkenni a forma alján és egy részével a cheesecake oldalait kenjük ki.\r\nA túrót, a joghurttal és a xillittel  együtt kikeverjük, majd a csomagolás szerint hozzáadjuk a zselatin fixálót. A keveréket kiöntjük a formába és egy kicsit horizontálisan mozgatjuk, hogy a krém egyenletesen legyen eloszlatva. Ezután azonnal feldíszítjük. A tésztára a Zero Sziruppal pontokat rajzolunk, majd hurkapálcával végigmegyünk minden pont közepén (mintha ketté szeretnénk őket választani), amivel mini szívek alakulnak ki a sütemény tetején.\r\nA tortát legalább 2 órát a hűtőben hagyjuk dermedni, de legjobb, ha az egész éjszaka ott marad. Tálalás előtt elsőként egy lapát/ spatula segítségével elválasztjuk a tészta oldalait, majd aztán nyitjuk ki a formát. A sütemény nemcsak gluténmentes, de főként tele van fehérjékkel, ideális a forró nyári napokon. Kiegészíthetitek friss gyümölccsel, vagy mentával.', 'LRM_EXPORT_20180502_170130.webp'),
-(6, 'test', 'leiras', ''),
-(7, 'ccc', 'ccccc', ''),
-(8, 'test3', 'aaaaa', ''),
-(9, 'test4', 'aaaaaa', ''),
-(10, 'test5', 'aaaaa', ''),
-(11, 'test5', 'aaaaa', '');
+(13, 'test1', 'asd', '1707388539.jpg');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -159,7 +152,7 @@ ALTER TABLE `hozzavalok`
 -- AUTO_INCREMENT a táblához `termekek`
 --
 ALTER TABLE `termekek`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Megkötések a kiírt táblákhoz

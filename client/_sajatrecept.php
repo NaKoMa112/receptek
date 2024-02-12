@@ -6,7 +6,7 @@
         </div>
         <div class="input col-md-12 m-1">
             <p>sütemény neve:</p>
-            <input type="text" class="sutinev" id="nev" name="nev" maxlength="100" placeholder="pl.:proteineskókusz golyó">
+            <input type="text" class="sutinev" name="nev" maxlength="100" placeholder="pl.:proteineskókusz golyó">
         </div>
         <div class="input col-md-12 m-1">
             <p>sütemény képe:</p>
@@ -20,15 +20,15 @@
         <div class="hozzavalokDiv1 row col-md-12 m-1">
             <div class="hozza-elso col-md-4">
                 <label class="hozzavalo">Hozzávaló:</label>
-                <input type="text" class="hozzavalo" name="hnev[]" placeholder="pl.:kókuszreszelék" required>
+                <input type="text" class="hozzavalonev" name="hnev[]" placeholder="pl.:kókuszreszelék" required>
             </div>
             <div class="hozza-elso col-md-4">
                 <label class="hozzavalo-lbl">Mennyiség:</label>
-                <input type="text" class="hozzavalo" name="hmennyiseg[]" placeholder="1" required>
+                <input type="text" class="hozzavalomennyiseg" name="hmennyiseg[]" placeholder="1" required>
             </div>
             <div class="hozza-elso col-md-4 mb-2">
                 <label class="hozzavalo-lbl">Mértékegység:</label>
-                <input type="text" class="hozzavalo" name="hmertekegyseg[]" placeholder="csomag" required>
+                <input type="text" class="hozzavalomertekegyseg" name="hmertekegyseg[]" placeholder="csomag" required>
             </div>
         </div>
 
@@ -82,15 +82,15 @@
         <span class="col-md-4" id="h${i}">
         <div class="hozza col-md-3">
                 <label class="hozzavalo">Hozzávaló:</label>
-                <input type="text" class="hozzavalo" name="hnev[]" required>
+                <input type="text" class="hozzavalonev" name="hnev[]" required>
             </div>
             <div class="hozza col-md-3">     
                 <label class="hozzavalo-lbl">Mennyiség:</label>
-                <input type="text" class="hozzavalo" name="hmennyiseg[]" required>
+                <input type="text" class="hozzavalomennyiseg" name="hmennyiseg[]" required>
             </div>
             <div class="hozza col-md-3">
                 <label class="hozzavalo-lbl">Mértékegység:</label>
-                <input type="text" class="hozzavalo" name="hmertekegyseg[]" required>
+                <input type="text" class="hozzavalomertekegyseg" name="hmertekegyseg[]" required>
                 <button type="button" class="torol-btn" onclick="torol(this)">❌</button>
             </div>
         </span>    
@@ -104,9 +104,9 @@
     }
 
     let termekid;
+    let feltoltes;
 
     function mentes() {
-        if (document.getElementById("nev").value == "") return;
         console.log(document.getElementById("kepnezet").src);
         let slash = document.getElementById("kepnezet").src.lastIndexOf("/");
         let kepnev = document.getElementById("kepnezet").src.substr(slash +1);
@@ -121,6 +121,7 @@
     function renderMsg(data) {
         if (data) {
             termekid = data;
+
             let hnevinput = document.getElementsByName('hnev[]');
             let hmennyiseginput = document.getElementsByName('hmennyiseg[]');
             let hmertekegyseginput = document.getElementsByName('hmertekegyseg[]');
@@ -134,14 +135,13 @@
                     mennyiseg: hmennyiseginput[index].value
                 })
             }
-            console.log(hozzavalok);
-            postData('../server/feltolthozzavalok.php', JSON.stringify(hozzavalok), renderresult);
+            //console.log(hozzavalok);
+            //postData('../server/feltolthozzavalok.php', JSON.stringify(hozzavalok), renderresult);
 
         }
-        //console.log(data);
+        console.log(data);
     }
     function renderresult(data){
-        console.log("válasz:",data);
+        console.log(data);
     }
-    //Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, rerum quis. Commodi vero a cum facere laudantium! Harum sapiente, obcaecati libero, incidunt quas asperiores ut quidem ullam vitae, odit facilis!
 </script>

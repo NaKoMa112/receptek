@@ -10,7 +10,7 @@
         </div>
         <div class="input col-md-12 m-1">
             <p>sütemény képe:</p>
-            <input type="file" name="kep" id="">
+            <input type="file" class="sutikep" name="kep" id="">
         </div>
         <div class="input col-md-12 m-1">
             <p>sütemény leírása:</p>
@@ -19,15 +19,15 @@
         <div class="hozzavalokDiv1 row col-md-12 m-1">
             <div class="hozza-elso col-md-4">
                 <label class="hozzavalo">Hozzávaló:</label>
-                <input type="text" class="hozzavalo" name="hnev[]" placeholder="pl.:kókuszreszelék" required>
+                <input type="text" class="hozzavalonev" name="hnev[]" placeholder="pl.:kókuszreszelék" required>
             </div>
             <div class="hozza-elso col-md-4">
                 <label class="hozzavalo-lbl">Mennyiség:</label>
-                <input type="text" class="hozzavalo" name="hmennyiseg[]" placeholder="1" required>
+                <input type="text" class="hozzavalomennyiseg" name="hmennyiseg[]" placeholder="1" required>
             </div>
             <div class="hozza-elso col-md-4 mb-2">
                 <label class="hozzavalo-lbl">Mértékegység:</label>
-                <input type="text" class="hozzavalo" name="hmertekegyseg[]" placeholder="csomag" required>
+                <input type="text" class="hozzavalomertekegyseg" name="hmertekegyseg[]" placeholder="csomag" required>
             </div>
         </div>
 
@@ -52,15 +52,15 @@
         <span class="col-md-4" id="h${i}">
         <div class="hozza col-md-3">
                 <label class="hozzavalo">Hozzávaló:</label>
-                <input type="text" class="hozzavalo" name="hnev[]" required>
+                <input type="text" class="hozzavalonev" name="hnev[]" required>
             </div>
             <div class="hozza col-md-3">     
                 <label class="hozzavalo-lbl">Mennyiség:</label>
-                <input type="text" class="hozzavalo" name="hmennyiseg[]" required>
+                <input type="text" class="hozzavalomennyiseg" name="hmennyiseg[]" required>
             </div>
             <div class="hozza col-md-3">
                 <label class="hozzavalo-lbl">Mértékegység:</label>
-                <input type="text" class="hozzavalo" name="hmertekegyseg[]" required>
+                <input type="text" class="hozzavalomertekegyseg" name="hmertekegyseg[]" required>
                 <button type="button" class="torol-btn" onclick="torol(this)">❌</button>
             </div>
         </span>    
@@ -74,10 +74,19 @@
     }
 
     let termekid;
+    let feltoltes;
 
     function mentes() {
         const formdata = new FormData(document.querySelector('form'));
         postData('../server/feltolt.php', formdata, renderMsg);
+
+        if (document.querySelector('.sutinev').value != null && document.querySelector('.leiras').value != null && document.querySelector('.sutikep').value != null && document.querySelectorAll('.hozzavalonev').value != null) {
+            console.log("sikeres feltöltés");
+            feltoltes = true;
+        }else{
+            console.log("sikertelen feltöltés");
+            feltoltes = false;
+        }
 
     }
 
@@ -99,7 +108,12 @@
                 })
             }
             //console.log(hozzavalok);
-            postData('../server/feltolthozzavalok.php', JSON.stringify(hozzavalok), renderresult);
+            
+            if (feltoltes == true) {
+                postData('../server/feltolthozzavalok.php', JSON.stringify(hozzavalok), renderresult);   
+            }else{
+                alert("Sikertelen feltöltés");
+            }
 
         }
         console.log(data);

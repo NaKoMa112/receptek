@@ -8,35 +8,21 @@
     <link rel="stylesheet" href="style.css">
     <script src="getData.js"></script>
     <script src="postData.js"></script>
-    <title>Sport Sütemények</title>
+    <link rel="shortcut icon" href="../kepek/" type="image/x-icon">
+    <title>PowerBites</title>
       <!--PowerBites.com-->
 </head>
     <body>
-        <div class="container bg-light p-0 mx-auto w-100">
-      
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded shadow w-100">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item p-2 m-2">
-                  <a class="nav-link" href="index.php?prog=fooldal.php">Főoldal</a>
-                </li>
-                <li class="nav-item p-2 m-2">
-                  <a class="nav-link" href="index.php?prog=betolt.php">Szütemények</a>
-                </li>
-                <li class="nav-item p-2 m-2">
-                  <a class="nav-link" href="index.php?prog=sajatrecept.php">Saját recept</a>
-                </li>
-                <li class="nav-item p-2 m-2">
-                  <a class="nav-link" href="index.php?prog=bejelentkezes.php">Profil</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <a href=""></a>
-      
+        <nav id="menu">
+          <input type="checkbox" id="responsive-menu" onclick="pdatemenu()"><label></label>
+          <ul>
+            <li><a href="index.php?prog=fooldal.php"><img src="../kepek/powerbites logo transparentmini.png"> PowerBites</a></li>
+            <li><a href="index.php?prog=betolt.php">Sütemények</a></li>
+            <li><a href="index.php?prog=sajatrecept.php">Saját Recept</a></li>
+            <li style="float: right;"><a href="index.php?prog=bejelentkezes.php">Profil</a></li>
+          </ul>
+        </nav>
+        
 
           <div class="row p-3 justify-content-center">
             <!--az URL-ben kapott program betöltése-->
@@ -48,7 +34,18 @@
             ?>
             
           </div>
-        </div>
+        <script>
+
+          function updatemenu() {
+            if (document.getElementById('responsive-menu').checked == true) {
+              document.getElementById('menu').style.borderBottomRightRadius = '0';
+              document.getElementById('menu').style.borderBottomLeftRadius = '0';
+            }else{
+              document.getElementById('menu').style.borderRadius = '10px';
+            }
+          }
+
+        </script>
     
         <script src="bootstrap/jquery-3.5.1.min.js"></script>
   <script src="bootstrap/bootstrap.bundle.js"></script>

@@ -1,3 +1,4 @@
+<!--hozzávalók-div háttér süti vagy muffin-->
 <form>
     <div class="row">
 

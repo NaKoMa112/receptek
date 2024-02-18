@@ -1,4 +1,8 @@
-<div class="row">  
+<div class="row">
+    <div class="reszletek_hozzavalok_kep_cim col-md-12"></div>
+    <div class="reszletek_hozzavalok_div"></div>
+    <div class="reszletek_leiras_vissza col-md-12"></div>
+    
 </div>
 <script>
         let urlParams = new URLSearchParams(window.location.search);
@@ -10,24 +14,33 @@
 
         function renderDetails(data){
         console.log(data);
-        document.querySelector('.row').innerHTML =`
-            <div class="col-md-12 text-center">
-            <img class="${data[0].kep} img-fluid" src="kepek/${data[0].kep}">
-            <h1 class="${data[0].tnev} text-center">${data[0].tnev}</h1>
-            <ul class="font-weight-bold text-left">Hozzávalók:</ul>
+        document.querySelector('.reszletek_hozzavalok_kep_cim').innerHTML =`
+            <div class="reszletek_div col-md-12 text-center">
+            <div class="reszletek_div_kep col-md-8">
+            <img class="reszletek_kep img-fluid" src="../kepek/${data[0].kep}">
+            </div>
+            <h1 class="reszletek_cim">${data[0].tnev}</h1>
+            
             </div>
                 `
+        document.querySelector('.reszletek_hozzavalok_div').innerHTML =`
+        <div class="reszletek_div_p col-md-12">
+        <p class="reszletek_ul">Hozzávalók:</p>
+        </div>
+        `
         for(let obj of data){
-            document.querySelector('.row').innerHTML += `
-                <div class="col-md-12 m-1 text-left">
-                    <li>${obj.hnev}</li>
-                </div> 
-                
+            document.querySelector('.reszletek_hozzavalok_div').innerHTML += `
+                <div class="reszletek_div_li col-md-12">
+                    <lu class="reszletek_hozzavalok_li col-md-12">${obj.hnev}</lu>
+                </div>   
             `
         }
-        document.querySelector('.row').innerHTML +=`
-        <div class="leiras">${data[0].leiras}</div>
-        <button type="button" class="vissza-btn" onclick="vissza()">vissza</button>`
+        document.querySelector('.reszletek_leiras_vissza').innerHTML +=`
+        <div class="reszletek_leiras cold-md-12">${data[0].leiras}</div>
+        <div class="reszletek_vissza_div col-md-12 text-center">
+        <button type="button" class="reszletek_vissza_button" onclick="vissza()">vissza</button>
+        </div>
+        `
     }
 
     function vissza(){

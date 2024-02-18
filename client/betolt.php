@@ -1,14 +1,6 @@
-<div>
-        <table>
-            <tbody>
-                <tr>
-                    <div class="row">
-                        
-                    </div>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="row">
+
+</div>
     
     <script>
         getData('../server/betolt.php', renderDiv)
@@ -17,10 +9,10 @@
             console.log(data);
             for (let obj of data) {
                 document.querySelector('.row').innerHTML+=`
-                <div class="col-md-3 m-1 text-center">
-                    <img class="${obj.kep} img-fluid" src="../kepek/${obj.kep}">
-                    <td class="${obj.nev}">${obj.nev}</td><br>
-                    <button onclick="show('${obj.id}')">részletek</button>
+                <div class="sutemenyek_div col-md-3 m-1 text-center">
+                    <img class="sutemenyek_kepek img-fluid" src="../kepek/${obj.kep}">
+                    <td class="sutemenyek_cim">${obj.nev}</td><br>
+                    <button class="sutemenyek_button" onclick="show('${obj.id}')">részletek</button>
                 </div>    
                 `;
             }

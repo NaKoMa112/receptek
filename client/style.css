@@ -1,3 +1,4 @@
+/*navbar*/
 #menu {
 	background: #F6DCB9;
 	height: 45px;
@@ -32,6 +33,7 @@
 }
 #menu li a:hover {
 	color: #8B4513;
+	border-radius: 10px;
 	background: #F2F2F2;
 }
 #menu input {
@@ -93,11 +95,110 @@
 	#menu input:checked + label:before {content:"\00d7"}
 	#menu input:checked ~ ul {display:block}
 }
-/*navbar*/
-
 li {
     float: left;
   }
+/*navbar*/
+
+/*főoldal*/
+.fooldal_div_cim{
+	margin-left: auto;
+	margin-right: auto;
+}
+.fooldal_cim{
+	text-align: center;
+	color: white;
+	max-width: 750px;
+	height: 600px;
+	display: flex;
+	font-size:xx-large;
+	align-items: center;
+	border-radius: 21px 21px 21px 21px;
+	border: 2px solid #8b4513;
+	background-image: url("../kepek/cookies.jpg");
+	background-position: center;
+	background-size: 750px, 600px;
+}
+.fooldal_szoveg{
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+}
+/*főoldal*/
+
+/*sütemények*/
+.sutemenyek_div{
+	border-radius: 21px 21px 21px 21px;
+	border: 2px solid #8b4513;
+	background: #ffffff;
+	padding: 3px;
+	color: #D2B48C;
+	text-shadow:1px 1px 2px;
+}
+.sutemenyek_kepek{
+	border-radius: 20px 20px 20px 20px;
+	border: 1px solid #8b4513;
+}
+.sutemenyek_button{
+	background-color: #D2B48C;
+	color: #ffffff;
+	border-radius: 10px 10px 10px 10px;
+}
+/*sütemények*/
+
+/*sütemények_részletek*/
+.reszletek_div{
+	margin-bottom: 2rem;
+}
+.reszletek_div_kep{
+	margin-left: auto;
+	margin-right: auto;
+}
+.reszletek_kep{
+	border: 3px dotted #8b4513;
+	border-radius: 10px 10px 10px 10px;
+	object-fit: cover;
+}
+.reszletek_cim{
+	margin: 1rem;
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+}
+.reszletek_div_p{
+	text-align: left;
+	font-weight: bold;
+	margin-bottom: 1px;
+	border-bottom: 2px solid black;
+}
+.reszletek_div_li{
+	text-align: left;
+	margin-bottom: 1px;	
+	border-bottom: 1px solid black;
+}
+.reszletek_hozzavalok_div{
+	font-family:cursive;
+	margin-left: 1rem;
+	margin-right: auto;
+	margin-bottom: 2rem;
+	background-color: whitesmoke;
+}
+.reszletek_leiras{
+	margin-bottom: 1rem;
+}
+.reszletek_vissza_div{
+	align-items: center;
+	margin: auto;
+}
+.reszletek_vissza_button{
+	background-color: #8b4513;
+	color: #ffffff;
+	border-radius: 10px 10px 10px 10px;
+}
+/*sütemények_részletek*/
+
+body{
+	background-image: url("../kepek/Építészeti\ Tervek1.jpg");
+	background-size: contain;
+}
 .row{
     background-color: #D2B48C;
     margin-left: 10px;
@@ -116,6 +217,3 @@ li {
 .email{
     width: 300px;
 }
-/*.sutinev{
-    width: 300px;
-}*/

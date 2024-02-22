@@ -1,34 +1,34 @@
 <form>
-    <div class="sajatrecept_div row">
+    <div class="row">
 
-        <div class="sajatrecept_cim col-md-12 text-center m-1">
+        <div class="col-md-12 text-center m-1">
             <h1>Saját recept</h1>
         </div>
-        <div class="sajatrecept_input_nev col-md-12 m-1">
+        <div class="input col-md-12 m-1">
             <p>sütemény neve:</p>
             <input type="text" class="sutinev" name="nev" maxlength="100" placeholder="pl.:proteineskókusz golyó">
         </div>
-        <div class="sajatrecept_input_kep col-md-12 m-1">
+        <div class="input col-md-12 m-1">
             <p>sütemény képe:</p>
             <input type="file" name="kep" id="kep" onchange="uploadImg(this)">
             <div class="uploaded-img"></div>
         </div>
-        <div class="sajatrecept_input_leiras col-md-12 m-1">
+        <div class="input col-md-12 m-1">
             <p>sütemény leírása:</p>
             <textarea name="leiras" cols="40" rows="10" maxlength="1000" placeholder="leírás"></textarea>
         </div>
         <div class="hozzavalokDiv1 row col-md-12 m-1">
             <div class="hozza-elso col-md-4">
                 <label class="hozzavalo">Hozzávaló:</label>
-                <input type="text" class="hozzavalonev" name="hnev[]" placeholder="pl.:kókuszreszelék" required>
+                <input type="text" class="hozzavalo" name="hnev[]" placeholder="pl.:kókuszreszelék" required>
             </div>
             <div class="hozza-elso col-md-4">
                 <label class="hozzavalo-lbl">Mennyiség:</label>
-                <input type="text" class="hozzavalomennyiseg" name="hmennyiseg[]" placeholder="1" required>
+                <input type="text" class="hozzavalo" name="hmennyiseg[]" placeholder="1" required>
             </div>
             <div class="hozza-elso col-md-4 mb-2">
                 <label class="hozzavalo-lbl">Mértékegység:</label>
-                <input type="text" class="hozzavalomertekegyseg" name="hmertekegyseg[]" placeholder="csomag" required>
+                <input type="text" class="hozzavalo" name="hmertekegyseg[]" placeholder="csomag" required>
             </div>
         </div>
 
@@ -82,15 +82,15 @@
         <span class="col-md-4" id="h${i}">
         <div class="hozza col-md-3">
                 <label class="hozzavalo">Hozzávaló:</label>
-                <input type="text" class="hozzavalonev" name="hnev[]" required>
+                <input type="text" class="hozzavalo" name="hnev[]" required>
             </div>
             <div class="hozza col-md-3">     
                 <label class="hozzavalo-lbl">Mennyiség:</label>
-                <input type="text" class="hozzavalomennyiseg" name="hmennyiseg[]" required>
+                <input type="text" class="hozzavalo" name="hmennyiseg[]" required>
             </div>
             <div class="hozza col-md-3">
                 <label class="hozzavalo-lbl">Mértékegység:</label>
-                <input type="text" class="hozzavalomertekegyseg" name="hmertekegyseg[]" required>
+                <input type="text" class="hozzavalo" name="hmertekegyseg[]" required>
                 <button type="button" class="torol-btn" onclick="torol(this)">❌</button>
             </div>
         </span>    
@@ -104,7 +104,6 @@
     }
 
     let termekid;
-    let feltoltes;
 
     function mentes() {
         console.log(document.getElementById("kepnezet").src);
@@ -121,27 +120,32 @@
     function renderMsg(data) {
         if (data) {
             termekid = data;
-
             let hnevinput = document.getElementsByName('hnev[]');
             let hmennyiseginput = document.getElementsByName('hmennyiseg[]');
             let hmertekegyseginput = document.getElementsByName('hmertekegyseg[]');
 
             let hozzavalok = [];
-            for (let index = 0; index < hnevinput.length; index++) {
-                hozzavalok.push({
-                    termekid: termekid,
-                    nev: hnevinput[index].value,
-                    mertekegyseg: hmertekegyseginput[index].value,
-                    mennyiseg: hmennyiseginput[index].value
-                })
+            for (let index = 0; index < hnevinput.length; index++) {   
+                ///////////////////////////////////////////////////////////////////////////////////
+                if (hnevinput[index].value.trim() !== '' && (hmennyiseginput[index].value.trim() !== '' || hmertekegyseginput[index].value.trim() !== '')) {
+                    hozzavalok.push({
+                            termekid: termekid,
+                            nev: hnevinput[index].value,
+                            mertekegyseg: hmertekegyseginput[index].value,
+                            mennyiseg: hmennyiseginput[index].value
+                        })
+                }
             }
-            //console.log(hozzavalok);
-            //postData('../server/feltolthozzavalok.php', JSON.stringify(hozzavalok), renderresult);
+            console.log(hozzavalok);
+            if(hozzavalok.length==0) return
+
+            postData('../server/feltolthozzavalok.php', JSON.stringify(hozzavalok), renderresult);
 
         }
-        console.log(data);
+        //console.log(data);
     }
     function renderresult(data){
-        console.log(data);
+        console.log("válasz:",data);
     }
+    //Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, rerum quis. Commodi vero a cum facere laudantium! Harum sapiente, obcaecati libero, incidunt quas asperiores ut quidem ullam vitae, odit facilis!
 </script>

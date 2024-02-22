@@ -2,7 +2,7 @@
 
 require_once "db.php";
 $sql= "SELECT termekek.kep, termekek.nev, termekek.id
-    FROM termekek ORDER BY termekek.nev DESC";
+    FROM termekek ORDER BY termekek.nev";
 
 $stmt=$db->query($sql);
 

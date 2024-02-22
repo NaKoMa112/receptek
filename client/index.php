@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="getData.js"></script>
     <script src="postData.js"></script>
-    <link rel="shortcut icon" href="../kepek/powerbites logo filled.png " type="image/x-icon">
+    <link rel="shortcut icon" href="../kepek/powerbites logo filled.png" type="image/x-icon">
     <title>PowerBites</title>
       <!--PowerBites.com-->
 </head>

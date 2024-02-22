@@ -12,7 +12,7 @@ if ($postdata) {
         $sql = "";
         foreach ($hozzavalok as $hozzavalo) {
             extract($hozzavalo);
-            $sql .= "INSERT INTO hozzavalok VALUES (null, {$termekid}, '{$kep}', '{$nev}', '{$mennyiseg}', '{$mertekegyseg}');";
+            $sql .= "INSERT INTO hozzavalok VALUES (null, {$termekid}, '{$nev}', '{$mennyiseg}', '{$mertekegyseg}');";
         }
         $stmt = $db->exec($sql);
         if ($stmt) {

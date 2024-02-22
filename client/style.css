@@ -97,27 +97,33 @@
 }
 li {
     float: left;
-  }
+}
 /*navbar*/
 
 /*főoldal*/
 .fooldal_div_cim{
 	margin-left: auto;
 	margin-right: auto;
-}
-.fooldal_cim{
-	text-align: center;
-	color: white;
-	max-width: 750px;
-	height: 600px;
-	display: flex;
-	font-size:xx-large;
-	align-items: center;
-	border-radius: 21px 21px 21px 21px;
-	border: 2px solid #8b4513;
+	height: 400px;
 	background-image: url("../kepek/cookies.jpg");
 	background-position: center;
-	background-size: 750px, 600px;
+	background-size: 1121px, 600px;
+	border-radius: 21px 21px 21px 21px;
+	border: 2px solid #8b4513;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+.fooldal_cim{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	color: white;
+	font-size:xx-large;
+	text-shadow: 1px 1px 2px gray;
+	margin: 1rem;
 }
 .fooldal_szoveg{
 	color: white;
@@ -169,7 +175,7 @@ li {
 	margin-bottom: 1px;
 	border-bottom: 2px solid black;
 }
-.reszletek_div_li{
+.reszletek_div_lo{
 	text-align: left;
 	margin-bottom: 1px;	
 	border-bottom: 1px solid black;
@@ -182,6 +188,8 @@ li {
 	background-color: whitesmoke;
 }
 .reszletek_leiras{
+	font-size: larger;
+	text-shadow: 1px 1px 2px gray;
 	margin-bottom: 1rem;
 }
 .reszletek_vissza_div{
@@ -195,12 +203,96 @@ li {
 }
 /*sütemények_részletek*/
 
+/*sajátrecept*/
+.sajatrecept_div{
+	background-image: url(../kepek/cookies_background1.png);
+	background-size: 360px 360px;
+	background-repeat: repeat;
+}
+.sajatrecept_cim{
+	margin: 1rem;
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+	font-size: large;
+	text-align: center;
+	margin: 1rem;
+}
+.sajatrecept_nev{
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+	font-size: large;
+	margin: 1rem;
+}
+.sajatrecept_kep{
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+	font-size: large;
+	margin: 1rem;
+}
+.sajatrecept_leiras{
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+	font-size: large;
+	margin: 1rem;
+}
+.uploaded-img{
+		color: white;
+		text-shadow: 1px 1px 2px #8b4513;
+		font-size: large;
+}
+.uploadedMsg-img{
+	color: white;
+		text-shadow: 1px 1px 2px #8b4513;
+		font-size: large;
+}
+.sajatrecept_textarea{
+	border-radius: 10px;
+	border: 1px solid #8b4513;
+}
+.hozzavalok_div1{
+	background-color: rgba(17, 17, 17, 0.3);
+	border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+}
+.hozzavalok_div2{
+	display: flex;
+	flex-wrap: wrap;
+}
+.hozzavalok_div3{
+	background-color: rgba(17, 17, 17, 0.3);
+	border: 1px solid black;
+	border-radius: 10px;
+}
+.hozzavalo_elso{
+	color: white;
+		text-shadow: 1px 1px 2px #8b4513;
+}
+.hozzavalo_masodik{
+	color: white;
+		text-shadow: 1px 1px 2px #8b4513;
+}
+.hozzavalo_harmadik{
+	color: white;
+		text-shadow: 1px 1px 2px #8b4513;
+}
+.hozza2_harmadik{
+	margin-bottom: 0.5rem;
+}
+/*sajátrecept*/
+
 body{
 	background-image: url("../kepek/Építészeti\ Tervek1.jpg");
 	background-size: contain;
 }
 .row{
     background-color: #D2B48C;
+	border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -210,7 +302,6 @@ body{
     justify-content: center;
 }
 .logo{
-
     max-width: 200px;
     max-height: 200px;
 }

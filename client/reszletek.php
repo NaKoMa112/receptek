@@ -25,13 +25,13 @@
                 `
         document.querySelector('.reszletek_hozzavalok_div').innerHTML =`
         <div class="reszletek_div_p col-md-12">
-        <p class="reszletek_ul">Hozzávalók:</p>
+        <p class="reszletek_p">Hozzávalók:</p>
         </div>
         `
         for(let obj of data){
             document.querySelector('.reszletek_hozzavalok_div').innerHTML += `
-                <div class="reszletek_div_li col-md-12">
-                    <lu class="reszletek_hozzavalok_li col-md-12">${obj.hnev}</lu>
+                <div class="reszletek_div_lo col-md-12">
+                    <lo class="reszletek_hozzavalok_lo col-md-12">${obj.hnev}</lo>
                 </div>   
             `
         }

@@ -13,6 +13,13 @@
                     <img class="sutemenyek_kepek img-fluid" src="../kepek/${obj.kep}">
                     <td class="sutemenyek_cim">${obj.nev}</td><br>
                     <button class="sutemenyek_button" onclick="show('${obj.id}')">részletek</button>
+                    <p class="sutemenyek_mentes" onclick="save('${obj.id}')">
+                    <?php
+                    if (isset($_SESSION['email']))
+                        echo "<i class='fa-regular fa-thumbs-up fa-2x'></i>";
+                    
+                    ?>
+                    </p>
                 </div>    
                 `;
             }
@@ -22,5 +29,15 @@
             console.log(id);
                 window.location.href = 'index.php?prog=reszletek.php&id=' +encodeURIComponent(id);
             }
+
+        function save(id){
+            console.log(id);
+            getData('../server/addkedvenc.php?termek_id='+ id, renderResult);
+        }
+
+        function renderResult(data){
+            console.log(data);
+        }
+
 
     </script>

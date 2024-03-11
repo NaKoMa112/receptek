@@ -61,14 +61,15 @@
 #menu ul.sub-menus{
 	height: auto;
 	overflow: hidden;
-	width: 170px;
-	background: #444444;
+	border-radius: 10px;
+	width: auto;
+	background: #8B4513;
 	position: absolute;
 	z-index: 99;
 	display: none;
 }
 #menu ul.sub-menus li {
-	display: block;
+	display:block;
 	text-align: left;
 	width: 100%;
 }
@@ -77,7 +78,7 @@
 	font-size: 16px;
 }
 #menu li:hover ul.sub-menus {
-	display: block
+	display: block;
 }
 #menu ul.sub-menus a:hover{
 	background: #F2F2F2;
@@ -107,7 +108,7 @@ li {
 	height: 400px;
 	background-image: url("../kepek/cookies.jpg");
 	background-position: center;
-	background-size: 1121px, 600px;
+	background-size: 750px, 600px;
 	border-radius: 21px 21px 21px 21px;
 	border: 2px solid #8b4513;
 	display: flex;
@@ -148,6 +149,9 @@ li {
 	background-color: #D2B48C;
 	color: #ffffff;
 	border-radius: 10px 10px 10px 10px;
+}
+.fa-regular{
+	cursor: pointer;
 }
 /*sütemények*/
 
@@ -285,6 +289,12 @@ li {
 	margin-bottom: 0.5rem;
 }
 /*sajátrecept*/
+
+/*bejelentkezés*/
+/*bejelentkezés*/
+
+/*regisztráció*/
+/*regisztráció*/
 
 body{
 	background-image: url("../kepek/Építészeti\ Tervek1.jpg");

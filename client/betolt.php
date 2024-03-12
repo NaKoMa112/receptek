@@ -16,7 +16,7 @@
                     <p class="sutemenyek_mentes" onclick="save('${obj.id}')">
                     <?php
                     if (isset($_SESSION['email']))
-                        echo "<i class='fa-regular fa-thumbs-up fa-2x'></i>";
+                        echo "<a class='sutemenyek_like fa-regular fa-thumbs-up fa-2x'></a>";
                     
                     ?>
                     </p>
@@ -32,7 +32,22 @@
 
         function save(id){
             console.log(id);
-            getData('../server/addkedvenc.php?termek_id='+ id, renderResult);
+            getData('../server/mentett.php', renderId);
+            function renderId(data){
+                console.log(data);
+                let volt = false;
+                for(let obj of data){
+                    if (id != obj.termek_id) {
+                    }else{
+                        volt = true;
+                    }
+                }
+                if (volt == true) {
+                    console.log("Hiba");
+                } else {
+                    getData('../server/addkedvenc.php?termek_id='+ id, renderResult);
+                }
+            }
         }
 
         function renderResult(data){

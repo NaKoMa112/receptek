@@ -1,3 +1,25 @@
+body{
+	background-image: url("../kepek/Építészeti\ Tervek1.jpg");
+	background-size: contain;
+}
+.row{
+    background-color: #D2B48C;
+	border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.logoDiv{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    max-width: 200px;
+    max-height: 200px;
+}
+.email{
+    width: 300px;
+}
 /*navbar*/
 #menu {
 	background: #F6DCB9;
@@ -205,6 +227,18 @@ li {
 	color: #ffffff;
 	border-radius: 10px 10px 10px 10px;
 }
+.sutemenyek_like{
+	color: #D2B48C;
+	text-decoration:none;
+}
+.sutemenyek_like:hover{
+	text-decoration: none;
+	color: #D2B48C;
+}
+.sutemenyek_like:visited{
+	color: black;
+	text-decoration: none;
+}
 /*sütemények_részletek*/
 
 /*sajátrecept*/
@@ -296,25 +330,54 @@ li {
 /*regisztráció*/
 /*regisztráció*/
 
-body{
-	background-image: url("../kepek/Építészeti\ Tervek1.jpg");
-	background-size: contain;
+/*profil*/
+.profil_Logo{
+	margin: 5px 0px 10px 0px;
 }
-.row{
-    background-color: #D2B48C;
-	border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+.profil_Felhasznalo {
+	border-bottom: #8b4513 2px dashed;
+	border-radius: 0px;
+	margin: auto;
 }
-.logoDiv{
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.profil_Div {
+	display: block;
+	margin: auto;
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+	font-size: larger;
 }
-.logo{
-    max-width: 200px;
-    max-height: 200px;
+.profil_Vnev {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
-.email{
-    width: 300px;
+.profil_Knev {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
+.profil_Email {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.profil_Mentett_Cim {
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+}
+.profil_Kedvencek {
+	margin: auto;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	background-image: url(../kepek/abstract-wavy-lines-seamless-vector-600nw-1967983942.webp);
+	background-size: 450px 300px;
+	background-repeat: repeat;
+	display: flex;
+	justify-content: center;
+}
+.profil_Sutemeny_Div {
+	border-radius: 21px 21px 21px 21px;
+	border: 2px solid #8b4513;
+	background: #ffffff;
+	padding: 3px;
+	color: #D2B48C;
+	text-shadow: 1px 1px 2px;
+}
+/*profil*/

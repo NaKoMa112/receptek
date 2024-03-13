@@ -1,25 +1,25 @@
-<div class="row text-center">
+<div class="row ujfel_Div">
     <div class="col-md-6">
-        <p>Keresztnév:</p>
+        <p class="ujfel_P">Keresztnév:</p>
         <input type="text" name="keresztnev" class="keresztnev" maxlength="50">
     </div>
     <div class="col-md-6">
-        <p>Vezetéknév:</p>
+        <p class="ujfel_P">Vezetéknév:</p>
         <input type="text" name="vezeteknev" class="vezeteknev" maxlength="50">
     </div>
     <div class="input col-md-12 m-1">
-        <p>E-mail:</p>
-        <input type="email" name="email" class="email" maxlength="100" onblur="verifyEmail(this)" />
+        <p class="ujfel_P">E-mail:</p>
+        <input type="email" name="email" class="email" maxlength="100" onblur="verifyEmail(this)"/>
     </div>
     <div class="input col-md-12 m-1">
-        <p>Jelszó:</p>
-        <input type="password" name="jelszo" class="jelszo" maxlength="100" />
+        <p class="ujfel_P">Jelszó:</p>
+        <input type="password" name="jelszo" class="jelszo" maxlength="100"/>
     </div>
     <div class="input col-md-12 m-1">
-        <button class="mentes-btn" onclick="mentes()">Mentés</button>
+        <button class="mentes-btn ujfel_Button" onclick="mentes()">Mentés</button>
     </div>
     <div class="input col-md-12 m-1">
-        <button class="vissza-btn" onclick="vissza()">vissza</button>
+        <button class="vissza-btn ujfel_Button" onclick="vissza()">vissza</button>
     </div>
 </div>
 <script>

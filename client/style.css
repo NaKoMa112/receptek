@@ -17,9 +17,7 @@ body{
     max-width: 200px;
     max-height: 200px;
 }
-.email{
-    width: 300px;
-}
+
 /*navbar*/
 #menu {
 	background: #F6DCB9;
@@ -149,6 +147,7 @@ li {
 	margin: 1rem;
 }
 .fooldal_szoveg{
+	margin-top: 2px;
 	color: white;
 	text-shadow: 1px 1px 2px #8b4513;
 }
@@ -325,9 +324,53 @@ li {
 /*sajátrecept*/
 
 /*bejelentkezés*/
+.bejelent_Div{
+	text-align: center;
+	margin: 1rem 1rem 1rem 1rem;
+	background-image: url(../kepek/il_fullxfull.4100378008_2gf9-removebg-preview.png);
+	background-size: 400px, 400px;
+	background-position: 0% 10%;
+	background-repeat: space repeat;
+}
+.bejelent_P{
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+}
+.bejelent_Button{
+	background-color: #8b4513;
+	color: #ffffff;
+	border-radius: 10px 10px 10px 10px;
+}
+.bejelent_A{
+color:#8b4513;
+text-shadow: 1px 1px 2px gray;
+text-decoration:none;
+}
+.bejelent_A:hover{
+text-decoration: none;
+color:#8b4513;
+text-shadow: 1px 1px 2px gray;
+}
 /*bejelentkezés*/
 
 /*regisztráció*/
+.ujfel_Div{
+	text-align: center;
+	margin: 1rem 1rem 1rem 1rem;
+	background-image: url(../kepek/training-Photoroom.png-Photoroom.png);
+	background-size: 1000px 420px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.ujfel_P{
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+}
+.ujfel_Button{
+	background-color: #8b4513;
+	color: #ffffff;
+	border-radius: 10px 10px 10px 10px;
+}
 /*regisztráció*/
 
 /*profil*/
@@ -359,6 +402,10 @@ li {
 	margin-bottom: 10px;
 }
 .profil_Mentett_Cim {
+	color: white;
+	text-shadow: 1px 1px 2px #8b4513;
+}
+.profil_Mentett_Cim2 {
 	color: white;
 	text-shadow: 1px 1px 2px #8b4513;
 }

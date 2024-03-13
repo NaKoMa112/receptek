@@ -4,7 +4,7 @@ require_once 'db.php';
 extract($_GET);
 extract($_SESSION);
 
-$sql="SELECT kedvencek.termek_id FROM kedvencek, felhasznalok WHERE felhasznalok.email=kedvencek.email";
+$sql="SELECT kedvencek.termek_id FROM kedvencek, felhasznalok WHERE felhasznalok.email=kedvencek.email AND felhasznalok.email='{$email}'";
 
 $stmt=$db->query($sql);
 

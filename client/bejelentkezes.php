@@ -1,10 +1,10 @@
-<div class="row text-center">
+<div class="row col-md-10 bejelent_Div">
     <div class="input col-md-12 m-1">
-        <p>E-mail:</p>
-        <input type="email" class="email" maxlength="100" placeholder="pl.:sutimester@gmail.com">
+        <p class="bejelent_P">E-mail:</p>
+        <input type="email" class="email" maxlength="80" placeholder="pl.:sutimester@gmail.com">
     </div>
     <div class="input col-md-12 m-1">
-        <p>Jelszó:</p>
+        <p class="bejelent_P">Jelszó:</p>
         <input type="password" class="jelszo" maxlength="100" placeholder="********">
     </div>
     <!--<div class="input col md-12 m-1">
@@ -15,10 +15,10 @@
         <label for="checkbox" class="checkbox">Maradjak belépve</label>
     </div>-->
     <div class="input col-md-12 m-1">
-        <button type="button" class="belep-btn" onclick="belep()">Belépés</button>
+        <button type="button" class="belep-btn bejelent_Button" onclick="belep()">Belépés</button>
     </div>
     <div class="input col-md-12 m-1">
-        <a href="index.php?prog=ujfelhasznalo.php">Regisztráció</a>
+        <a class="bejelent_A" href="index.php?prog=ujfelhasznalo.php">Regisztráció</a>
     </div>
 </div>
 

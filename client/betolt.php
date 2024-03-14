@@ -16,7 +16,7 @@
                     <p class="sutemenyek_mentes" onclick="save('${obj.id}')">
                     <?php
                     if (isset($_SESSION['email']))
-                        echo "<a class='sutemenyek_like fa-regular fa-thumbs-up fa-2x'></a>";
+                        echo "<a class='sutemenyek_like fa-regular fa-thumbs-up fa-2x' title='mentés'></a>";
                     
                     ?>
                     </p>

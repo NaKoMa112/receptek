@@ -1,39 +1,10 @@
--- phpMyAdmin SQL Dump
--- version 4.9.0.1
--- https://www.phpmyadmin.net/
---
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Már 11. 11:24
--- Kiszolgáló verziója: 10.4.6-MariaDB
--- PHP verzió: 7.3.8
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Adatbázis: `receptek`
---
-
--- --------------------------------------------------------
-
---
--- Tábla szerkezet ehhez a táblához `felhasznalok`
---
 
 CREATE TABLE `felhasznalok` (
   `id` int(11) NOT NULL,
-  `keresztnev` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
-  `vezeteknev` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
-  `jelszo` varchar(256) COLLATE utf8_hungarian_ci NOT NULL
+  `keresztnev` varchar(100)  NOT NULL,
+  `vezeteknev` varchar(100)  NOT NULL,
+  `email` varchar(100)  NOT NULL,
+  `jelszo` varchar(256)  NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -41,8 +12,8 @@ CREATE TABLE `felhasznalok` (
 --
 
 INSERT INTO `felhasznalok` (`id`, `keresztnev`, `vezeteknev`, `email`, `jelszo`) VALUES
-(1, 'a', 'b', 'asd', 'aaa'),
-(4, 'v', 'k', 'asdasd', '$2y$10$vKmYl57sU/BcQzD9FW6mQOa/A6xT0TJ2U0UlEMUgXTMBASHfaYfBK');
+(4, 'v', 'k', 'asdasd', '$2y$10$vKmYl57sU/BcQzD9FW6mQOa/A6xT0TJ2U0UlEMUgXTMBASHfaYfBK'),
+(5, 'vv', 'kk', 'asd123', '$2y$10$VNOdVXu3MIbiJcbwmAsGu.dg1bTzHgV/h2tFrkkQMTSoUh1GsllWG');
 
 -- --------------------------------------------------------
 
@@ -53,9 +24,9 @@ INSERT INTO `felhasznalok` (`id`, `keresztnev`, `vezeteknev`, `email`, `jelszo`)
 CREATE TABLE `hozzavalok` (
   `id` int(11) NOT NULL,
   `termek_id` int(11) NOT NULL,
-  `nev` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `nev` varchar(100)  NOT NULL,
   `mennyiseg` int(4) NOT NULL,
-  `mertekegyseg` varchar(20) COLLATE utf8_hungarian_ci NOT NULL
+  `mertekegyseg` varchar(20)  NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -127,7 +98,7 @@ INSERT INTO `hozzavalok` (`id`, `termek_id`, `nev`, `mennyiseg`, `mertekegyseg`)
 
 CREATE TABLE `kedvencek` (
   `id` int(11) NOT NULL,
-  `email` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
+  `email` varchar(100)  NOT NULL,
   `termek_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
@@ -137,7 +108,12 @@ CREATE TABLE `kedvencek` (
 
 INSERT INTO `kedvencek` (`id`, `email`, `termek_id`) VALUES
 (1, 'asdasd', 2),
-(2, 'asdasd', 3);
+(2, 'asdasd', 3),
+(21, 'asdasd', 1),
+(22, 'asdasd', 5),
+(23, 'asdasd', 4),
+(25, 'asd123', 2),
+(26, 'asd123', 1);
 
 -- --------------------------------------------------------
 
@@ -147,9 +123,9 @@ INSERT INTO `kedvencek` (`id`, `email`, `termek_id`) VALUES
 
 CREATE TABLE `termekek` (
   `id` int(11) NOT NULL,
-  `nev` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
-  `leiras` varchar(5000) COLLATE utf8_hungarian_ci NOT NULL,
-  `kep` varchar(100) COLLATE utf8_hungarian_ci NOT NULL
+  `nev` varchar(100)  NOT NULL,
+  `leiras` varchar(5000)  NOT NULL,
+  `kep` varchar(100)  NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
@@ -203,7 +179,7 @@ ALTER TABLE `termekek`
 -- AUTO_INCREMENT a táblához `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT a táblához `hozzavalok`
@@ -215,7 +191,7 @@ ALTER TABLE `hozzavalok`
 -- AUTO_INCREMENT a táblához `kedvencek`
 --
 ALTER TABLE `kedvencek`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT a táblához `termekek`
@@ -240,7 +216,3 @@ ALTER TABLE `kedvencek`
   ADD CONSTRAINT `kedvencek_ibfk_1` FOREIGN KEY (`termek_id`) REFERENCES `termekek` (`id`),
   ADD CONSTRAINT `kedvencek_ibfk_2` FOREIGN KEY (`email`) REFERENCES `felhasznalok` (`email`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

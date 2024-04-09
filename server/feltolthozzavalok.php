@@ -1,5 +1,5 @@
 <?php
-require_once "db.php";
+require_once "_db.php";
 
 // A php://input streamből olvassuk be az adatokat
 $postdata = file_get_contents("php://input");

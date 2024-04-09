@@ -8,12 +8,12 @@
         let urlParams = new URLSearchParams(window.location.search);
         let id = urlParams.get('id');
 
-        console.log(id);
+        //console.log(id);
         getData('../server/reszletek.php?id='+id,renderDetails);
 
 
         function renderDetails(data){
-        console.log(data);
+        //console.log(data);
         document.querySelector('.reszletek_hozzavalok_kep_cim').innerHTML =`
             <div class="reszletek_div col-md-12 text-center">
             <div class="reszletek_div_kep col-md-8">

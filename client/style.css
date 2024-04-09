@@ -1,5 +1,5 @@
 body{
-	background-image: url("../kepek/Építészeti\ Tervek1.jpg");
+	background-image: url("../kepek/ÉpítészetiTervek1.jpg");
 	background-size: contain;
 }
 .row{
@@ -72,7 +72,7 @@ body{
 	position: absolute;
 	left: 35px
 }
-#menu label:before {
+#menu label:after {
 	font-size: 1.6em;
 	color: #FFFFFF;
 	content: "\2261"; 
@@ -110,7 +110,7 @@ body{
 	#menu ul.sub-menus {width:100%;position:static;}
 	#menu ul.sub-menus a {padding-left:30px;}
 	#menu li {display:block;float:none;width:auto;}
-	#menu input, #menu label {position:absolute;top:0;left:0;display:block}
+	#menu input, #menu label {position:absolute;top:0;left:0;display:block;display: flex;justify-content: center;}
 	#menu input {z-index:4}
 	#menu input:checked + label {color:#FFFFFF}
 	#menu input:checked + label:before {content:"\00d7"}
@@ -119,6 +119,12 @@ body{
 li {
     float: left;
 }
+label{
+	margin-left: 2px;
+	color:#FFFFFF;
+	float: left;
+	text-transform: uppercase;
+}
 /*navbar*/
 
 /*főoldal*/
@@ -126,7 +132,7 @@ li {
 	margin-left: auto;
 	margin-right: auto;
 	height: 400px;
-	background-image: url("../kepek/cookies.jpg");
+	background-image: url("../kepek/cookies1.jpg");
 	background-position: center;
 	background-size: 750px, 600px;
 	border-radius: 21px 21px 21px 21px;
@@ -147,6 +153,8 @@ li {
 	margin: 1rem;
 }
 .fooldal_szoveg{
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 2px;
 	color: white;
 	text-shadow: 1px 1px 2px #8b4513;

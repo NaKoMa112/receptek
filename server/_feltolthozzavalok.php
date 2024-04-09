@@ -1,6 +1,6 @@
 <?php
 
-require_once "db.php";
+require_once "_db.php";
 echo json_encode($_POST);
 /*$hozzavalok=json_decode($_POST);
 if ($hozzavalok) {

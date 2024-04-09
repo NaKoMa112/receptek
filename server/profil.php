@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once '_db.php';
 extract($_SESSION);
 
 $sql= "SELECT termekek.kep, termekek.nev, termekek.id, felhasznalok.email, felhasznalok.vezeteknev, felhasznalok.keresztnev

@@ -6,7 +6,7 @@
     getData('../server/profil.php', renderKedvenc);
 
     function renderKedvenc(data) {
-        console.log(data);
+        //console.log(data);
         if (data == "") {
             console.log("nicsen még kedvenc süti");
             getData('../server/onlyprofil.php', renderProfil);
@@ -55,7 +55,7 @@
         }
 
     function show(id) {
-        console.log(id);
+        //console.log(id);
         window.location.href = 'index.php?prog=reszletek1.php&id=' + encodeURIComponent(id);
     }
 </script>

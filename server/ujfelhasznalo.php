@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once '_db.php';
 extract($_POST);
 
 $pwh =password_hash($pw, PASSWORD_DEFAULT);

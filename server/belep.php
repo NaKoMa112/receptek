@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once '_db.php';
 extract($_POST);
 
 $sql = "SELECT jelszo,email FROM felhasznalok WHERE email ='{$email}'";

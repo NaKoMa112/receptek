@@ -1,6 +1,6 @@
 <?php
 
-require_once "db.php";
+require_once "_db.php";
 extract($_POST);
 $sql="INSERT INTO termekek VALUES (null, '{$nev}', '{$leiras}', '{$kep}')";
 $stmt= $db->exec($sql);

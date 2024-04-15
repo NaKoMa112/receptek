@@ -13,7 +13,7 @@
 
 
         function renderDetails(data){
-        //console.log(data);
+        console.log(data);
         document.querySelector('.reszletek_hozzavalok_kep_cim').innerHTML =`
             <div class="reszletek_div col-md-12 text-center">
             <div class="reszletek_div_kep col-md-8">
@@ -31,7 +31,7 @@
         for(let obj of data){
             document.querySelector('.reszletek_hozzavalok_div').innerHTML += `
                 <div class="reszletek_div_lo col-md-12">
-                    <lo class="reszletek_hozzavalok_lo col-md-12">${obj.hnev}</lo>
+                    <lo class="reszletek_hozzavalok_lo col-md-12">${obj.hnev} ${obj.mennyiseg} ${obj.mertekegyseg}</lo>
                 </div>   
             `
         }

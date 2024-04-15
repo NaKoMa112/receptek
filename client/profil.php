@@ -14,7 +14,7 @@
                 console.log(data);
                 for (let obj of data) {
             document.querySelector('.profil_Felhasznalo').innerHTML += `
-            <img class="profil_Logo img-fuild col-md-2" src="../kepek/f548a217afde45e281d3b122eb138766-removebg-preview.png" alt="">
+            <div class="row col-md-2 profil_Logo"><img class="profil_Logo img-fuild" src="../kepek/f548a217afde45e281d3b122eb138766-removebg-preview.png" alt=""></div>
             <div class="col-md-10 profil_Div">
             <div class="col-md-12 profil_Vnev">Vezeték név: ${obj.vezeteknev}</div>
             <div class="col-md-12 profil_Knev">Kereszt név: ${obj.keresztnev}</div>

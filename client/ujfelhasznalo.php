@@ -60,7 +60,7 @@
     }
 
     function renderMsg(data){
-        console.log(data);
+        //console.log(data);
     }
 
     function vissza(){

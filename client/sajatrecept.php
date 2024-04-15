@@ -6,16 +6,16 @@
             <h1>Saját recept</h1>
         </div>
         <div class="sajatrecept_input_nev col-md-12">
-            <p class="sajatrecept_nev">sütemény neve:</p>
+            <p class="sajatrecept_nev">Sütemény/édesség neve:</p>
             <input type="text" class="sutinev" id="nev" name="nev" maxlength="100" placeholder="pl.:proteineskókusz golyó">
         </div>
         <div class="sajatrecept_input_kep col-md-12">
-            <p class="sajatrecept_kep">sütemény képe:</p>
+            <p class="sajatrecept_kep">Sütemény képe:</p>
             <input type="file" class="uploaded-img" name="kep" id="kep" onchange="uploadImg(this)">
             <div class="uploadedMsg-img"></div>
         </div>
         <div class="sajatrecept_input_leiras col-md-12">
-            <p class="sajatrecept_leiras">sütemény leírása:</p>
+            <p class="sajatrecept_leiras">Sütemény leírása:</p>
             <textarea name="leiras" class="sajatrecept_textarea" cols="40" rows="10" maxlength="1000" placeholder="leírás"></textarea>
         </div>
         <div class="hozzavalok_div1 col-md-12">
